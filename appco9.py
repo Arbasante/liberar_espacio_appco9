@@ -6,8 +6,9 @@ lista = []
 ruta = "C:\\Users\\T.I\\Documents\\python package"
 
 #command = rf'Get-ChildItem -Path "{ruta}" -File | Select-Object -Property Name, CreationTime'
-command = rf'Get-ChildItem -Path "{ruta}" -File | Select-Object -Property Name, CreationTime | Sort-Object -Property CreationTime'
-output = subprocess.check_output(["powershell", "-Command", command])
+command_file = rf'Get-ChildItem -Path "{ruta}" -File | Select-Object -Property Name, CreationTime | Sort-Object -Property CreationTime'
+command_folder = rf'Get-ChildItem -Path "{ruta}" -Directory -File | Select-Object -Property Name'
+output = subprocess.check_output(["powershell", "-Command", command_file])
 salida= output.decode("utf-8")
 print(salida)
 
