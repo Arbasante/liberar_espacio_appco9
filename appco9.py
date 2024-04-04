@@ -75,7 +75,7 @@ if __name__ == '__main__':
             "C:\\Users\\Administrador\\Documents\\Instaladores\\Ebill\\Web","C:\\Users\\Administrador\\Documents\\Instaladores\\Portal Proveedores",
             "C:\\Users\\Administrador\\Documents\\Instaladores\\Sonda Colas Recepcion","C:\\Users\\Administrador\\Documents\\Instaladores\\SondaEbill",
             "C:\\Users\\Administrador\\Documents\\Instaladores\\ApiGateWayTest","C:\\Users\\Administrador\\Documents\\Instaladores\\FTP Apple"]
-    #path = ["C:\\Users\\Administrador\\Documents\\Instaladores\\Sonda Colas Recepcion"]
+    
 
     for ruta in path:
         liberar_espacio(ruta)
