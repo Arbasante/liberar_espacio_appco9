@@ -6,14 +6,17 @@ import os
 
 def liberar_espacio(ruta):
 
+    print("\n",ruta)
+
     #command_file = rf'Get-ChildItem -Path "{ruta}" -File | Select-Object -Property Name, CreationTime | Sort-Object -Property CreationTime'
     command_folder = rf'Get-ChildItem -Path "{ruta}" -Directory | Select-Object -Property Name, CreationTime | Sort-Object -Property CreationTime'
     output = subprocess.check_output(["powershell", "-Command", command_folder])
     salida= output.decode("utf-8")
+    
     print(salida)
 
     lineas = salida.splitlines()[3:-2]  # Elimina los espacios vacios de la lista
-    print ("el ultimo archivo creado es: ", lineas)
+    #print ("el ultimo archivo creado es: ", lineas)
 
 
     archivos_zip = []
@@ -61,7 +64,7 @@ if __name__ == '__main__':
             "C:\\Users\\Administrador\\Documents\\Instaladores\\eBillToClienteV2","C:\\Users\\Administrador\\Documents\\Instaladores\\Endosos-test",
             "C:\\Users\\Administrador\\Documents\\Instaladores\\esalariumweb","C:\\Users\\Administrador\\Documents\\Instaladores\\EbillGateway",
             "C:\\Users\\Administrador\\Documents\\Instaladores\\SondaCalificadora","C:\\Users\\Administrador\\Documents\\Instaladores\\apifinanciera",
-            "C:\\Users\\Administrador\\Documents\\Instaladores\\SondaVerificaEstadoBizagi","C:\\Users\\Administrador\\Documents\\Instaladores\\SetupSondaRadicadoraSIGED"
+            "C:\\Users\\Administrador\\Documents\\Instaladores\\SondaVerificaEstadoBizagi","C:\\Users\\Administrador\\Documents\\Instaladores\\SetupSondaRadicadoraSIGED",
             "C:\\Users\\Administrador\\Documents\\Instaladores\\EbillToFTPCliente","C:\\Users\\Administrador\\Documents\\Instaladores\\eBillApiRestTestDev",
             "C:\\Users\\Administrador\\Documents\\Instaladores\\Sonda Rezagos DIAN Test","C:\\Users\\Administrador\\Documents\\Instaladores\\Sonda rezagos dian x empresa",
             "C:\\Users\\Administrador\\Documents\\Instaladores\\USTA","C:\\Users\\Administrador\\Documents\\Instaladores\\SondaEnvioMasivoEventosTest",
@@ -72,7 +75,7 @@ if __name__ == '__main__':
             "C:\\Users\\Administrador\\Documents\\Instaladores\\InformeC","C:\\Users\\Administrador\\Documents\\Instaladores\\ApieBillReceptorTest",
             "C:\\Users\\Administrador\\Documents\\Instaladores\\ApiRestTransversalTest","C:\\Users\\Administrador\\Documents\\Instaladores\\Api ValyReg",
             "C:\\Users\\Administrador\\Documents\\Instaladores\\Portal Pagador Web para V&R Test","C:\\Users\\Administrador\\Documents\\Instaladores\\FacturaManual",
-            "C:\\Users\\Administrador\\Documents\\Instaladores\\Ebill\\Web","C:\\Users\\Administrador\\Documents\\Instaladores\\Portal Proveedores",
+            "C:\\Users\\Administrador\\Documents\\Instaladores\\Portal Proveedores",
             "C:\\Users\\Administrador\\Documents\\Instaladores\\Sonda Colas Recepcion","C:\\Users\\Administrador\\Documents\\Instaladores\\SondaEbill",
             "C:\\Users\\Administrador\\Documents\\Instaladores\\ApiGateWayTest","C:\\Users\\Administrador\\Documents\\Instaladores\\FTP Apple"]
     
